@@ -13,9 +13,9 @@ function Navb() {
                 <Form inline>
                 <Nav className="mr-auto">
                   <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link href="#link">Projects</Nav.Link>
-                  <Nav.Link href="#link">About</Nav.Link>
-                  <Nav.Link href="#link">Contact us</Nav.Link>
+                  <Nav.Link href="#projects">Projects</Nav.Link>
+                  <Nav.Link href="#about">About</Nav.Link>
+                  <Nav.Link href="#contact">Contact Me</Nav.Link>
                   </Nav>
                 </Form>
               </Navbar.Collapse>

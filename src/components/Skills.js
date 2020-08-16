@@ -2,7 +2,7 @@ import React from 'react'
 
 function Skills() {
     return (
-        <div className="skills">
+        <div className="skills" id="about">
             <div className="row">
                 <div className="skillsColumn1">
                 <h1 >Skills On Which I'm Working</h1>

@@ -3,7 +3,7 @@ import {Card,CardDeck} from 'react-bootstrap'
 
 function Projects() {
     return (
-        <div className="projects">
+        <div className="projects" id="projects">
             <h3 className="projectsTitle">Some of my projects</h3>
             <CardDeck>
                 <Card bg="dark">
