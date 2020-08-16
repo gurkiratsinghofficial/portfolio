@@ -211,7 +211,9 @@ textarea{
 
 
 
-
+.contact{
+  height: 85vh;
+}
 
   .contact-div{
     width: 95vw;
@@ -230,6 +232,7 @@ textarea{
   textarea{
     width: 85vw;
     margin-top: 2%;
+    height: 30vw;
   }
   button{
   }
