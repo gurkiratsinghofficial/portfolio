@@ -156,7 +156,8 @@ html,body{
   border-radius: 5px;
   background: #dde1e7;
   border-radius: 5px;
-	box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  height:7vh;
 }
 input{
   border-radius: 7px;
@@ -177,14 +178,15 @@ textarea:focus, input:focus{
   background: #dde1e7;
   border-radius: 5px;
   border-radius: 5px;
-	box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  height:7vh;
 }
-textarea{
+.message{
   display: inline-block;
   width: 50vw;
   padding: 10px 13px;
   margin-top: 1%;
-  height: 50%;
+  height: 35vh;
   border-radius: 7px;
   border: none;
   background: #dde1e7;
@@ -206,9 +208,7 @@ textarea{
   border-radius: 5px;
 	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
-.submit :hover{
-  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
-}
+
 @media screen and (max-width: 500px) {
   * {
     -webkit-box-sizing: content-box;
@@ -276,10 +276,10 @@ textarea{
     width: 85vw;
     margin-top: 2%;
   }
-  textarea{
+  .message{
     width: 85vw;
     margin-top: 2%;
-    height: 30vw;
+    height: 60vw;
   }
 }
 @media (prefers-color-scheme: dark) {
