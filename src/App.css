@@ -191,7 +191,8 @@ textarea:focus, input:focus{
   border: none;
   background: #dde1e7;
   border-radius: 5px;
-	box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  resize: none;
   
 }
 .contact-div button{
@@ -299,7 +300,7 @@ textarea:focus, input:focus{
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
-  textarea{
+  .message{
     background: #333;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
