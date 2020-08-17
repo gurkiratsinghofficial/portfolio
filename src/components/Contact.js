@@ -10,7 +10,7 @@ function Contact() {
                     <input name="name" className="inputName" placeholder="Enter your name" type="text"></input>  
                     <input  type="email" name="email" className="inputEmail" placeholder="Enter your E-mail"></input>
                     <textarea name="message" className="message" placeholder="Type your message here..."></textarea>
-                    <button type="submit" value="Send" className="submit">Commit</button>
+                    <button type="submit" value="Send" className="submit">Submit</button>
                     </form>
                     </div>           
         </div>

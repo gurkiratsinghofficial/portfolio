@@ -10,11 +10,17 @@ html,body{
     background: #dde1e7;
     color: #333;
   }
+  .home{
+    background: linear-gradient(180deg, rgba(52,58,64,1) 0%, rgba(52,58,64,1) 1%, rgba(221,225,231,1) 94%);
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {
     background: #333;
     color: #FFF;
+  }
+  .home{
+    background: linear-gradient(180deg, rgba(52,58,64,1) 0%, rgba(0,0,0,1) 49%, rgba(51,51,51,1) 100%);
   }
   
 
@@ -33,6 +39,7 @@ input{
   height: 90vh;
   justify-content: right;
   text-align: right;
+  
 }
 .description{
   width: 30%;

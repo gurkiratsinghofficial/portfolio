@@ -9,11 +9,9 @@ function Home() {
                 </div>
                 <div className="column2">
                 <h1 >I am Gurkirat Singh</h1>
-            <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Morbi pellentesque magna eu consequat egestas. Nullam faucibus
-                 est vel ex consectetur rutrum. Duis est felis, posuere vel suscipit 
-                 vel, egestas ac leo. Nunc sed nunc scelerisque, congue ipsum sed, ullamcorper
-                  erat. Morbi libero dolor, euismod a elit ut, feugiat tempus magna. Praesent porta nibh a neque convallis,</p>
+            <p > Technologically savvy and goal oriented. Driven and motivated to help organisations
+thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
+skills and attention to details.</p>
                 </div>
             </div>
             
