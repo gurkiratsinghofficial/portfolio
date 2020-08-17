@@ -19,6 +19,9 @@ html,body{
   
 
 }
+input{
+  -webkit-appearance: none;
+}
 .myname{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
