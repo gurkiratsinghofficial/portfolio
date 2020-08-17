@@ -224,6 +224,9 @@ textarea{
   .logoimg{
     width: 95vw;
   }
+  .home{
+    height: 100vh;
+  }
   .column1 {
     width: 100vw;
     align-items: center;
@@ -261,6 +264,10 @@ textarea{
     width: 95vw;
     height: auto;
     margin-top: 30%;
+  }
+  input{
+    height: 50px;
+    margin: 6px;
   }
   .inputName{
     width: 85vw;
