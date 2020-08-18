@@ -20,9 +20,7 @@ function Home() {
 thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
 skills and attention to details.</p>
         <div >
-          <p>
-             <a href={GurkiratSingh}  download><button className="resume">Download CV</button></a>
-          </p>
+          
           <p>
               <h1><IconContext.Provider value={{ className: "socialIcon" }}>
                  <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/GurkiratSinghOfficial/"> <GrFacebookOption/></a>
@@ -33,6 +31,9 @@ skills and attention to details.</p>
                   </IconContext.Provider>
                 </h1>
             </p>
+            <p>
+             <a href={GurkiratSingh}  download><button className="resume">Download CV</button></a>
+          </p>
        </div>
                 </div>
             </div>
