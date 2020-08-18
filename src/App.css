@@ -5,6 +5,14 @@ html,body{
   padding: 0px;
   overflow-x: hidden;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover{
+  text-decoration: none;
+  color: grey;
+}
 @media (prefers-color-scheme: light) {
   body {
     background: #dde1e7;
@@ -81,7 +89,41 @@ input{
   background: #dde1e7;
 	border-radius: 50%;
 	box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
-	position: relative;
+  position: relative;
+  transition: transform .2s;
+}
+.resume{
+  align-self: center;
+  justify-content: center;
+  border: none;
+  background: #dde1e7;
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+}
+.resume:hover{
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+}
+
+.social{
+  align-self: center;
+  justify-content: center;
+  border: none;
+  background: #dde1e7;
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+}
+.socialIcon{
+  display: inline-block;
+  border-radius: 7px;
+  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  margin: 2%;
+}
+.socialIcon:hover{
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
 }
 .projects{
   padding: 2%;
@@ -294,7 +336,19 @@ textarea:focus, input:focus{
   }
 }
 @media (prefers-color-scheme: dark) {
-  
+  .logoimg:hover{
+    box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
+    transform: scale(1.1)
+  }
+  .resume:hover{
+    box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
+  }
+  .socialIcon:hover{
+    box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
+  }
+  .socialIcon{
+    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+  }
   .contact-div{
     background: #333;
     color: #FFF;
@@ -316,6 +370,11 @@ textarea:focus, input:focus{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .submit{
+    background: #333;
+    color: #FFF;
+    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+  }
+  .resume{
     background: #333;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
