@@ -248,6 +248,7 @@ textarea:focus, input:focus{
   border-radius: 5px;
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
   resize: none;
+  margin-bottom: 1%;
   
 }
 .contact-div button{
@@ -262,7 +263,11 @@ textarea:focus, input:focus{
   border: none;
   background: #dde1e7;
   border-radius: 5px;
-	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  margin-bottom: 1%;
+}
+.submit:hover{
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
 }
 
 @media screen and (max-width: 500px) {
@@ -376,6 +381,9 @@ textarea:focus, input:focus{
     background: #333;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+  }
+  .submit:hover{
+    box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .resume{
     background: #333;
