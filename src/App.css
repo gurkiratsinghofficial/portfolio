@@ -5,6 +5,9 @@ html,body{
   padding: 0px;
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 a{
   text-decoration: none;
   color: inherit;
@@ -15,20 +18,20 @@ a:hover{
 }
 @media (prefers-color-scheme: light) {
   body {
-    background: #dde1e7;
-    color: #333;
+    background: #F8F9FA;
+    color: #343A40;
   }
   .home{
-    background: linear-gradient(180deg, rgba(52,58,64,1) 0%, rgba(221,225,231,1) 34%, rgba(221,225,231,1) 100%);
+    background: #F8F9FA;
   }
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background: #333;
+    background: #343A40;
     color: #FFF;
   }
   .home{
-    background: linear-gradient(180deg, rgba(52,58,64,1) 0%, rgba(51,51,51,1) 5%, rgba(51,51,51,1) 100%);
+    background: rgb(52,58,64);
   }
   
 
@@ -89,7 +92,7 @@ textarea{
 .logoimg{
   width: 50%;
   height: auto;
-  background: #dde1e7;
+  background: #F8F9FA;
 	border-radius: 50%;
 	box-shadow: -3px -3px 7px #ffffffa6, 3px 3px 5px rgba(94, 104, 121, 0.712);
   position: relative;
@@ -99,7 +102,7 @@ textarea{
   align-self: center;
   justify-content: center;
   border: none;
-  background: #dde1e7;
+  background: #F8F9FA;
   width: 50%;
   height: 40px;
   border-radius: 5px;
@@ -113,7 +116,7 @@ textarea{
   align-self: center;
   justify-content: center;
   border: none;
-  background: #dde1e7;
+  background: #F8F9FA;
   width: 50%;
   height: 40px;
   border-radius: 5px;
@@ -130,7 +133,7 @@ textarea{
 }
 .projects{
   padding: 2%;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 .projectsTitle{
   text-align: center;
@@ -139,7 +142,7 @@ textarea{
 .neo{
   padding: 0.5%;
   padding-bottom: 3%;
-  background: #dde1e7;
+  background: #F8F9FA;
 	border-radius: 5px;
 	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
@@ -201,7 +204,7 @@ textarea{
   height: 75vh;
   border-radius: 7px;
   padding-top: 1%;
-  background: #dde1e7;
+  background: #F8F9FA;
 	border-radius: 5px;
 	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
@@ -210,7 +213,7 @@ textarea{
   display: inline-block;
   margin-top: 2%;
   border-radius: 5px;
-  background: #dde1e7;
+  background: #F8F9FA;
   border-radius: 5px;
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
   height:7vh;
@@ -231,7 +234,7 @@ textarea:focus, input:focus{
   width: 50vw;
   margin-top: 1%;
   border: none;
-  background: #dde1e7;
+  background: #F8F9FA;
   border-radius: 5px;
   border-radius: 5px;
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
@@ -245,7 +248,7 @@ textarea:focus, input:focus{
   height: 35vh;
   border-radius: 7px;
   border: none;
-  background: #dde1e7;
+  background: #F8F9FA;
   border-radius: 5px;
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
   resize: none;
@@ -262,7 +265,7 @@ textarea:focus, input:focus{
   display: flex;
   justify-content: center;
   border: none;
-  background: #dde1e7;
+  background: #F8F9FA;
   border-radius: 5px;
   box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   margin-bottom: 1%;
@@ -289,6 +292,9 @@ textarea:focus, input:focus{
   .home{
     height: 100vh;
   }
+  .projects{
+    margin-top: 30%;
+  }
   .column1 {
     width: 100vw;
     align-items: center;
@@ -301,6 +307,9 @@ textarea:focus, input:focus{
     padding: 15px;
     padding-right: 20px;
   }
+  .skills{
+    height: 75vh;
+  }
   .skillsColumn1 {
     width: 100vw;
     padding: 25px;
@@ -311,6 +320,7 @@ textarea:focus, input:focus{
   }
   .contact{
     box-sizing: border-box;
+    margin-bottom: 40%;
   }
   .contact-div{
     height: 100px;
@@ -359,27 +369,27 @@ textarea:focus, input:focus{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .contact-div{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .inputName{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .inputEmail{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .message{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .submit{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
@@ -387,12 +397,12 @@ textarea:focus, input:focus{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .resume{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .neo{
-    background: #333;
+    background: #343A40;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
@@ -400,7 +410,7 @@ textarea:focus, input:focus{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .logoimg{
-    background: #333;
+    background: #343A40;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
 }
