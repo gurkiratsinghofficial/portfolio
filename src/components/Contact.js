@@ -1,5 +1,4 @@
 import React from 'react'
-import {Jumbotron,Form} from 'react-bootstrap'
 
 function Contact() {
     return (

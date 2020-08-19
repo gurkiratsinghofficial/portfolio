@@ -1,6 +1,6 @@
 import React from 'react'
 import GurkiratSingh from '../assets/GurkiratSingh.pdf'
-import { AiFillFacebook,AiOutlineInstagram,AiOutlineTwitter } from 'react-icons/ai';
+import {AiOutlineInstagram,AiOutlineTwitter } from 'react-icons/ai';
 import {GrFacebookOption} from 'react-icons/gr'
 import { IconContext } from "react-icons";
 import {TiSocialLinkedin} from 'react-icons/ti'
@@ -12,7 +12,7 @@ function Home() {
         <div className="home">
             <div className="row">
                 <div className="column1">
-                    <img className="logoimg" src={require('../new.png')} />                                         
+                    <img className="logoimg" alt="logo" src={require('../new.png')} />                                         
                 </div>
                 <div className="column2">
                 <h1 >I am Gurkirat Singh</h1>

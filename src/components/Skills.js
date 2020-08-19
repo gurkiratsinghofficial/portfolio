@@ -11,12 +11,12 @@ function Skills() {
                 </div>
                 <div className="skillsColumn2">
                     <div className="skillMeter">
-                    <img className="skillimg" src={require('../assets/c++.png')} /> 
-                        <img className="skillimg" src={require('../assets/html-5.png')} /> 
-                        <img className="skillimg" src={require('../assets/css3.png')} /> 
-                        <img className="skillimg" src={require('../assets/javascript.png')} /> 
-                        <img className="skillimg" src={require('../assets/react.png')} /> 
-                        <img className="skillimg" src={require('../assets/psd.png')} />           
+                    <img className="skillimg" alt="c++" src={require('../assets/c++.png')} /> 
+                        <img className="skillimg" alt="html5" src={require('../assets/html-5.png')} /> 
+                        <img className="skillimg" alt="css3" src={require('../assets/css3.png')} /> 
+                        <img className="skillimg" alt="javascript" src={require('../assets/javascript.png')} /> 
+                        <img className="skillimg" alt="react" src={require('../assets/react.png')} /> 
+                        <img className="skillimg" alt="psd" src={require('../assets/psd.png')} />           
                     </div>
                 </div>
             </div>
