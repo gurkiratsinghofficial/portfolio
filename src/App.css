@@ -397,7 +397,7 @@ textarea:focus, input:focus{
     height: 60vw;
   }
   .footer{
-  height: 38vh;
+  height: 10vh;
   font-size: large;
   }
 }
