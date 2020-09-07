@@ -5,7 +5,7 @@ function Skills() {
         <div className="skills" id="about">
             <div className="row">
                 <div className="skillsColumn1">
-                <h1 >Skills On Which I'm Working</h1>
+                <h1 ><label className="skillLabel">Skills</label> On Which I'm Working</h1>
             <p > I am working on technologies across the whole stack (MongoDB, Express, React, NodeJS). 
                 Experience building complete web applications with backend API systems.</p>                    
                 </div>

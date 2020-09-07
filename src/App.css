@@ -55,6 +55,12 @@ textarea{
   text-align: right;
   
 }
+.singh{
+  color: #ff8300;
+}
+.navlink:hover{
+  color: #ff8300 !important;
+}
 .description{
   width: 30%;
   justify-content: right;
@@ -77,7 +83,7 @@ textarea{
   padding: 15px;
   text-align: center;
   align-items: center;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-right: 5%;
 }
 .row:after {
@@ -98,6 +104,10 @@ textarea{
   position: relative;
   transition: transform .2s;
 }
+.logoimg:hover{
+  box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
+  transform: scale(1.05)
+}
 .resume{
   align-self: center;
   justify-content: center;
@@ -106,7 +116,8 @@ textarea{
   width: 50%;
   height: 40px;
   border-radius: 5px;
-	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  color: #ff8300;
 }
 .resume:hover{
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
@@ -127,6 +138,7 @@ textarea{
   border-radius: 7px;
   box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   margin: 2%;
+  color: #ff8300;
 }
 .socialIcon:hover{
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
@@ -134,6 +146,9 @@ textarea{
 .projects{
   padding: 2%;
   margin-top: 10%;
+}
+.projectscolor{
+  color: #ff8300 !important;
 }
 .projectsTitle{
   text-align: center;
@@ -150,6 +165,10 @@ textarea{
   height: 85vh;
   padding: 3%;
   margin-top: 13%;
+}
+
+.skillLabel{
+  color: #ff8300;
 }
 
 .skillsColumn1 {
@@ -192,6 +211,9 @@ textarea{
   text-align: center;
   height: 100vh;
   
+}
+.me{
+  color: #ff8300;
 }
 .contact-div{
   display: flex;
@@ -273,7 +295,29 @@ textarea:focus, input:focus{
 .submit:hover{
   box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
 }
+.footer{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #ff8300;
+  margin-bottom:2% ;
+}
 
+.footerIcons{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin:10px;
+  border-radius: 7px;
+  color: #ff8300;
+  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+}
+.footerIconsDiv{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
 @media screen and (max-width: 500px) {
   * {
     -webkit-box-sizing: content-box;
@@ -295,6 +339,7 @@ textarea:focus, input:focus{
   .projects{
     margin-top: 30%;
   }
+  
   .column1 {
     width: 100vw;
     align-items: center;
@@ -320,16 +365,14 @@ textarea:focus, input:focus{
   }
   .contact{
     box-sizing: border-box;
-    margin-bottom: 40%;
+    margin-bottom: 1%;
   }
   .contact-div{
     height: 100px;
   }
 
-
-
 .contact{
-  height: 85vh;
+  height: 80vh;
 }
 
   .contact-div{
@@ -353,11 +396,21 @@ textarea:focus, input:focus{
     margin-top: 2%;
     height: 60vw;
   }
+  .footer{
+  height: 38vh;
+  font-size: large;
+  }
 }
 @media (prefers-color-scheme: dark) {
+  .singh{
+    color: #39FF14;
+  }
+  .navlink:hover{
+    color: #39FF14 !important;
+  }
   .logoimg:hover{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
-    transform: scale(1.1)
+    transform: scale(1.05)
   }
   .resume:hover{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
@@ -367,7 +420,9 @@ textarea:focus, input:focus{
   }
   .socialIcon{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+    color: #39FF14;
   }
+  
   .contact-div{
     background: #343A40;
     color: #FFF;
@@ -396,9 +451,15 @@ textarea:focus, input:focus{
   .submit:hover{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
+  .projectscolor{
+    color: #39FF14 !important;
+  }
+  .skillLabel{
+    color: #39FF14;
+  }
   .resume{
     background: #343A40;
-    color: #FFF;
+    color:#39FF14;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .neo{
@@ -412,5 +473,15 @@ textarea:focus, input:focus{
   .logoimg{
     background: #343A40;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+  }
+  .me{
+    color: #39FF14;
+  }
+  .footer{
+    color: #39FF14;
+  }
+  .footerIcons{
+    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+    color: #39FF14;
   }
 }

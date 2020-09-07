@@ -21,17 +21,17 @@ function Navb() {
     return (
         <div>
             <Navbar bg={isDarkTheme ? "dark": "light"} variant={isDarkTheme ? "dark": "light"} expand="lg">
-              <Navbar.Brand href="#home">GURKIRAT SINGH</Navbar.Brand>
+              <Navbar.Brand href="#home">GURKIRAT <label className="singh">SINGH</label></Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 </Nav>
                 <Form inline>
                 <Nav className="mr-auto">
-                  <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link href="#projects">Projects</Nav.Link>
-                  <Nav.Link href="#about">About</Nav.Link>
-                  <Nav.Link href="#contact">Contact Me</Nav.Link>
+                  <Nav.Link href="#home"><label className="navlink">Home</label></Nav.Link>
+                  <Nav.Link href="#projects"><label className="navlink">Projects</label></Nav.Link>
+                  <Nav.Link href="#about"><label className="navlink">About</label></Nav.Link>
+                  <Nav.Link href="#contact"><label className="navlink">Contact Me</label></Nav.Link>
                   </Nav>
                 </Form>
               </Navbar.Collapse>
