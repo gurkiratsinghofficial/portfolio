@@ -138,6 +138,7 @@ textarea{
   border-radius: 7px;
   box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   margin: 2%;
+  
   color: #ff8300;
 }
 .socialIcon:hover{
@@ -311,7 +312,6 @@ textarea:focus, input:focus{
   margin:10px;
   border-radius: 7px;
   color: #ff8300;
-  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
 .footerIconsDiv{
   display: flex;
@@ -412,6 +412,7 @@ textarea:focus, input:focus{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
     transform: scale(1.05)
   }
+
   .resume:hover{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
@@ -421,30 +422,31 @@ textarea:focus, input:focus{
   .socialIcon{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
     color: #39FF14;
+    background-color: black;
   }
   
   .contact-div{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .inputName{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .inputEmail{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .message{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .submit{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
@@ -458,17 +460,18 @@ textarea:focus, input:focus{
     color: #39FF14;
   }
   .resume{
-    background: #343A40;
+    background: black;
     color:#39FF14;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .neo{
-    background: #343A40;
+    background: black;
     color: #FFF;
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .skillMeter{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
+    background-color: black;
   }
   .logoimg{
     background: #343A40;
@@ -481,7 +484,6 @@ textarea:focus, input:focus{
     color: #39FF14;
   }
   .footerIcons{
-    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
     color: #39FF14;
   }
 }
