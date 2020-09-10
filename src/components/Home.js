@@ -37,15 +37,6 @@ export class Home extends Component {
                         
                     </div>
                     <div className="column2">
-                    {!this.state.image &&
-                    <SkeletonTheme >
-                    <Skeleton width={400} height={50}/>
-                    <Skeleton count={3} height={20}  />
-                    <Skeleton height={50} width={350}/>
-                    <Skeleton height={45} width={350}/>
-                    </SkeletonTheme>
-                    }                   
-                    <Delay wait={2000}>
                     <h1 >I am Gurkirat Singh</h1>
                     <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
                         thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
@@ -66,7 +57,6 @@ export class Home extends Component {
                  <a href={GurkiratSingh}  download><button className="resume">Curriculum vitae</button></a>
               </p>
            </div>
-        </Delay>
             
                     </div>
                 </div>
