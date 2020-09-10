@@ -6,6 +6,7 @@ import { IconContext } from "react-icons";
 import {TiSocialLinkedin} from 'react-icons/ti'
 import {RiGithubLine} from 'react-icons/ri'
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Delay from 'react-delay'
 
 
 export class Home extends Component {
@@ -19,6 +20,7 @@ export class Home extends Component {
        handleImageLoaded = () => {
         this.setState({ image: 'loaded' })
     }
+    
     render() {
         
         return (
@@ -27,13 +29,12 @@ export class Home extends Component {
                     <div className="column1">
                     {!this.state.image &&
                     <SkeletonTheme color="#000000" highlightColor="#343A40">
-                    <Skeleton  circle={true} height={350} width={350}/>
+                    <Skeleton  circle={true} height={343} width={343}/>
+                    </SkeletonTheme>}
+                    <Delay wait={2000}>
                     <img className="logoimg" alt="logo" src={require('../new.png')} onLoad={this.handleImageLoaded.bind(this)} />
-                    </SkeletonTheme>
-   }
+                    </Delay>
                         
-                        
-    
                     </div>
                     <div className="column2">
                     <h1 >I am Gurkirat Singh</h1>
