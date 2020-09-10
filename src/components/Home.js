@@ -5,6 +5,7 @@ import {GrFacebookOption} from 'react-icons/gr'
 import { IconContext } from "react-icons";
 import {TiSocialLinkedin} from 'react-icons/ti'
 import {RiGithubLine} from 'react-icons/ri'
+import Skeleton from 'react-loading-skeleton'
 
 
 function Home() {
@@ -12,7 +13,9 @@ function Home() {
         <div className="home">
             <div className="row">
                 <div className="column1">
-                    <img className="logoimg" alt="logo" src={require('../new.png')} />                                         
+                    {<img className="logoimg" alt="logo" src={require('../new.png')} /> ||
+                    <Skeleton duration={2} circle={true} height={400} width={400} />}
+
                 </div>
                 <div className="column2">
                 <h1 >I am Gurkirat Singh</h1>
