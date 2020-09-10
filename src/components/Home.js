@@ -28,8 +28,8 @@ export class Home extends Component {
                 <div className="row">
                     <div className="column1">
                     {!this.state.image &&
-                    <SkeletonTheme color="#000000" highlightColor="#343A40">
-                    <Skeleton  circle={true} height={343} width={343}/>
+                    <SkeletonTheme >
+                    <Skeleton duration={1} circle={true} height={343} width={343}/>
                     </SkeletonTheme>}
                     <Delay wait={2000}>
                     <img className="logoimg" alt="logo" src={require('../new.png')} onLoad={this.handleImageLoaded.bind(this)} />
@@ -37,11 +37,23 @@ export class Home extends Component {
                         
                     </div>
                     <div className="column2">
+                    {!this.state.image &&
+                    <SkeletonTheme >
+                    <Skeleton width={400} height={50}/>
+                    </SkeletonTheme>}
+                    <Delay wait={2000}>
                     <h1 >I am Gurkirat Singh</h1>
+                    </Delay>
+                    {!this.state.image &&
+                    <SkeletonTheme >
+                    <Skeleton count={3} height={20}  />
+                    </SkeletonTheme>}
+                    <Delay wait={2000}>
                 <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
                         thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
                         skills and attention to details.
                 </p>
+                </Delay>
             <div >
               
               <p>
