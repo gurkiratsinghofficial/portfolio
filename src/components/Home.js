@@ -40,22 +40,18 @@ export class Home extends Component {
                     {!this.state.image &&
                     <SkeletonTheme >
                     <Skeleton width={400} height={50}/>
-                    </SkeletonTheme>}
+                    <Skeleton count={3} height={20}  />
+                    <Skeleton height={50} width={350}/>
+                    <Skeleton height={45} width={350}/>
+                    </SkeletonTheme>
+                    }                   
                     <Delay wait={2000}>
                     <h1 >I am Gurkirat Singh</h1>
-                    </Delay>
-                    {!this.state.image &&
-                    <SkeletonTheme >
-                    <Skeleton count={3} height={20}  />
-                    </SkeletonTheme>}
-                    <Delay wait={2000}>
-                <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
+                    <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
                         thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
                         skills and attention to details.
                 </p>
-                </Delay>
-            <div >
-              
+                <div >
               <p>
                   <h1><IconContext.Provider value={{ className: "socialIcon" }}>
                      <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/GurkiratSinghOfficial/"> <GrFacebookOption/></a>
@@ -70,6 +66,8 @@ export class Home extends Component {
                  <a href={GurkiratSingh}  download><button className="resume">Curriculum vitae</button></a>
               </p>
            </div>
+        </Delay>
+            
                     </div>
                 </div>
                 
