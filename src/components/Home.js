@@ -28,9 +28,10 @@ export class Home extends Component {
                     {!this.state.image &&
                     <SkeletonTheme color="#000000" highlightColor="#343A40">
                     <Skeleton  circle={true} height={350} width={350}/>
+                    <img className="logoimg" alt="logo" src={require('../new.png')} onLoad={this.handleImageLoaded.bind(this)} />
                     </SkeletonTheme>
    }
-                        <img className="logoimg" alt="logo" src={require('../new.png')} onLoad={this.handleImageLoaded.bind(this)} />
+                        
                         
     
                     </div>
