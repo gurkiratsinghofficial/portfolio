@@ -24,6 +24,15 @@ a:hover{
   .home{
     background: #F8F9FA;
   }
+  .social{
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .socialIcon{
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .resume{
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -116,7 +125,6 @@ textarea{
   width: 50%;
   height: 40px;
   border-radius: 5px;
-  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   color: #ff8300;
 }
 .resume:hover{
@@ -136,9 +144,7 @@ textarea{
 .socialIcon{
   display: inline-block;
   border-radius: 7px;
-  box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   margin: 2%;
-  
   color: #ff8300;
 }
 .socialIcon:hover{
@@ -420,7 +426,6 @@ textarea:focus, input:focus{
     box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1);
   }
   .socialIcon{
-    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
     color: #39FF14;
     background-color: black;
   }
@@ -462,7 +467,6 @@ textarea:focus, input:focus{
   .resume{
     background: black;
     color:#39FF14;
-    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .neo{
     background: black;
