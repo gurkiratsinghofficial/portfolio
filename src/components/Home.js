@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import GurkiratSingh from '../assets/GurkiratSingh.pdf'
+import Bhuvan_Resume from '../assets/Bhuvan_Resume.pdf'
 import {AiOutlineInstagram,AiOutlineTwitter } from 'react-icons/ai';
 import {GrFacebookOption} from 'react-icons/gr'
 import { IconContext } from "react-icons";
@@ -37,7 +37,7 @@ export class Home extends Component {
                         
                     </div>
                     <div className="column2">
-                    <h1 >I am Gurkirat Singh</h1>
+                    <h1 >I am Bhuvan Chadda</h1>
                     <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
                         thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
                         skills and attention to details.
@@ -45,16 +45,16 @@ export class Home extends Component {
                 <div >
               <p>
                   <h1><IconContext.Provider value={{ className: "socialIcon" }}>
-                     <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/GurkiratSinghOfficial/"> <GrFacebookOption/></a>
-                     <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/gurkiratsinghofficial/"><AiOutlineInstagram/></a>
-                     <a rel="noopener noreferrer" target="_blank" href="https://github.com/gurkiratsinghofficial"><RiGithubLine /></a>
-                     <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gurkiratsingho/"><TiSocialLinkedin/></a>
-                     <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/gurkiratsingho"><AiOutlineTwitter/></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/bhuvan.chadda/"> <GrFacebookOption/></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/bhuvan2222/"><AiOutlineInstagram/></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://github.com/bhuvan2222"><RiGithubLine /></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/bhuvan-chadda-b71507203/"><TiSocialLinkedin/></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/"><AiOutlineTwitter/></a>
                       </IconContext.Provider>
                     </h1>
                 </p>
                 <p>
-                 <a href={GurkiratSingh}  download><button className="resume">Curriculum vitae</button></a>
+                 <a href={Bhuvan_Resume}  download><button className="resume">Curriculum vitae</button></a>
               </p>
            </div>
             

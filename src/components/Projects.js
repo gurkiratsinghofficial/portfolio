@@ -27,31 +27,31 @@ function Projects() {
             <h3 className="projectsTitle">Some of my <label className="projectscolor">projects</label></h3>
             <CardDeck>
             <Card bg={isDarkTheme ? "dark": "light"} variant={isDarkTheme ? "dark": "light"}>
-                <a rel="noopener noreferrer" target="_blank" href="https://phone-kart.netlify.app/">
+                <a rel="noopener noreferrer" target="_blank" href="https://vigorous-swartz-355229.netlify.app/">
                     <Card.Img variant="top" src={pro1} />
                     </a>
                     <Card.Footer>
-                    <small ><a rel="noopener noreferrer" target="_blank" href="https://phone-kart.netlify.app/">E-commerce Frontend</a></small>
+                    <small ><a rel="noopener noreferrer" target="_blank" href="https://vigorous-swartz-355229.netlify.app/">Chat Application (MERN)</a></small>
                     </Card.Footer>
                 </Card>
                 <Card bg={isDarkTheme ? "dark": "light"} variant={isDarkTheme ? "dark": "light"}>
                     <a target="_blank" rel="noopener noreferrer" 
-                    href="https://drive.google.com/file/d/1_kVcYLL2T4wJN83qSvq_J12tO3KRtATC/view?usp=sharing"
+                    href="https://www.herbalforhealth.co/"
                     >
                     <Card.Img variant="top" src={pro2} />
                     </a>
                     <Card.Footer>
                     <small ><a target="_blank" rel="noopener noreferrer" 
-                    href="https://drive.google.com/file/d/1_kVcYLL2T4wJN83qSvq_J12tO3KRtATC/view?usp=sharing"
-                    >E-logistics Dashboard (Freelance)</a></small>
+                    href="https://www.herbalforhealth.co/"
+                    >Health and Nutrition Website (Freelance)</a></small>
                     </Card.Footer>
                 </Card>
                 <Card bg={isDarkTheme ? "dark": "light"} variant={isDarkTheme ? "dark": "light"}>
-                     <a target="_blank"  rel="noopener noreferrer" href="https://cov-19tracker.netlify.app/">
+                     <a target="_blank"  rel="noopener noreferrer" href="https://igclone-1c53b.web.app/">
                     <Card.Img variant="top" src={pro3} />
                     </a>                    
                     <Card.Footer>
-                    <small ><a rel="noopener noreferrer" target="_blank" href="https://cov-19tracker.netlify.app/">Corona Tracker</a></small>
+                    <small ><a rel="noopener noreferrer" target="_blank" href="https://igclone-1c53b.web.app/">Video Player</a></small>
                     </Card.Footer>
                 </Card>
                 </CardDeck>

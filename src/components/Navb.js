@@ -21,7 +21,7 @@ function Navb() {
     return (
         <div>
             <Navbar bg={isDarkTheme ? "dark": "light"} variant={isDarkTheme ? "dark": "light"} expand="lg">
-              <Navbar.Brand href="#home">GURKIRAT <label className="singh">SINGH</label></Navbar.Brand>
+              <Navbar.Brand href="#home">Bhuvan <label className="singh">Chadda</label></Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
