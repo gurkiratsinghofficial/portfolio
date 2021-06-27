@@ -38,6 +38,12 @@ a:hover{
     border-radius: 5px  !important;
     box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgb(94 104 121 / 95%)  !important;
   }
+  .project::before {
+    background: #F8F9FA  !important;
+  }
+  .project .vertical-timeline::before{
+    background: #F8F9FA  !important;
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -171,7 +177,6 @@ textarea{
   padding-bottom: 3%;
   background: #F8F9FA;
 	border-radius: 5px;
-	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
 .skills{
   height: 85vh;
@@ -413,6 +418,12 @@ textarea:focus, input:focus{
   }
 }
 @media (prefers-color-scheme: dark) {
+  .project::before {
+    background: black  !important;
+  }
+  .project .vertical-timeline::before{
+    background: black  !important;
+  }
   .vertical-timeline-element-content{
     background-color: black !important;
     border-radius: 5px  !important;
@@ -484,7 +495,6 @@ textarea:focus, input:focus{
   .neo{
     background: black;
     color: #FFF;
-    box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
   }
   .skillMeter{
     box-shadow: -3px -3px 7px #222222, 3px 3px 5px rgba(0, 0, 0, 1);
