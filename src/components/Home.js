@@ -39,7 +39,7 @@ export class Home extends Component {
                     <div className="column2">
                     <h1 >I am Gurkirat Singh</h1>
                     <p >    Technologically savvy and goal oriented. Driven and motivated to help organisations
-                        thrive. Skilled in prioritizing and completeing tasks independently. Good problem solving
+                        thrive. Skilled in prioritizing and completing tasks independently. Good problem solving
                         skills and attention to details.
                 </p>
                 <div >

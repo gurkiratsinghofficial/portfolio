@@ -33,6 +33,11 @@ a:hover{
   .resume{
     box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   }
+  .vertical-timeline-element-content{
+    background-color: white !important;
+    border-radius: 5px  !important;
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgb(94 104 121 / 95%)  !important;
+  }
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -408,6 +413,14 @@ textarea:focus, input:focus{
   }
 }
 @media (prefers-color-scheme: dark) {
+  .vertical-timeline-element-content{
+    background-color: black !important;
+    border-radius: 5px  !important;
+    box-shadow: inset -3px -3px 7px #222222, inset 3px 3px 5px rgba(0, 0, 0,1)  !important;
+  }
+  .vertical-timeline-element-icon{
+    background-color:#39FF14 !important; 
+  }
   .singh{
     color: #39FF14;
   }
