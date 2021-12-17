@@ -48,7 +48,7 @@ export class Home extends Component {
                      <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/GurkiratSinghOfficial/"> <GrFacebookOption/></a>
                      <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/gurkiratsinghofficial/"><AiOutlineInstagram/></a>
                      <a rel="noopener noreferrer" target="_blank" href="https://github.com/gurkiratsinghofficial"><RiGithubLine /></a>
-                     <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gurkiratsingho/"><TiSocialLinkedin/></a>
+                     <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/gurkiratsinghofficial/"><TiSocialLinkedin/></a>
                      <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/gurkiratsingho"><AiOutlineTwitter/></a>
                       </IconContext.Provider>
                     </h1>
