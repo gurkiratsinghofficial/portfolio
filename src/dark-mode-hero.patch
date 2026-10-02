@@ -1,0 +1,292 @@
+diff --git a/public/index.html b/public/index.html
+index aa069f2..893199b 100644
+--- a/public/index.html
++++ b/public/index.html
+@@ -24,6 +24,18 @@
+       work correctly both with client-side routing and a non-root public URL.
+       Learn how to configure a non-root public URL by running `npm run build`.
+     -->
++    <script>
++      // set theme before first paint to avoid a light-mode flash
++      (function () {
++        try {
++          var t = localStorage.getItem("theme");
++          if (t !== "light" && t !== "dark") {
++            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
++          }
++          document.documentElement.setAttribute("data-theme", t);
++        } catch (e) {}
++      })();
++    </script>
+     <title>React App</title>
+   </head>
+   <body>
+diff --git a/src/App.css b/src/App.css
+index 9811691..1d51523 100644
+--- a/src/App.css
++++ b/src/App.css
+@@ -9,14 +9,13 @@
+   --accent: #ff8300;
+ }
+ 
+-@media (prefers-color-scheme: dark) {
+-  :root {
+-    --bg: #15151b;
+-    --card: #1e1e26;
+-    --text: #ececf1;
+-    --muted: #a3a3b0;
+-    --line: #34343f;
+-  }
++:root[data-theme="dark"] {
++  color-scheme: dark;
++  --bg: #15151b;
++  --card: #1e1e26;
++  --text: #ececf1;
++  --muted: #a3a3b0;
++  --line: #34343f;
+ }
+ 
+ * { box-sizing: border-box; }
+@@ -25,6 +24,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+ 
+ @media (prefers-reduced-motion: reduce) {
+   html { scroll-behavior: auto; }
++  .hero-photo-wrap.loaded,
++  .hero-photo-wrap.loaded .hero-photo,
++  .hero-photo-wrap.loaded .hero-ring circle { animation: none; }
++  .hero-photo-wrap.loaded .hero-photo { opacity: 1; }
++  .hero-photo-wrap.loaded .hero-ring circle { stroke-dashoffset: 0; }
++  .theme-switch, .theme-switch .knob, .theme-switch .icon { transition: none; }
++}
++
++body, .topbar, .badges li, form input, form textarea,
++.vertical-timeline-element-content, footer {
++  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+ }
+ 
+ body {
+@@ -54,7 +64,45 @@ h2 { font-size: 1.9rem; font-weight: 800; text-align: center; margin-bottom: 1.2
+   background: var(--bg);
+   border-bottom: 1px solid var(--line);
+ }
++.brand-wrap { display: flex; align-items: center; gap: 0.85rem; }
+ .brand { font-weight: 800; text-decoration: none; }
++
++/* Theme switch */
++.theme-switch {
++  position: relative;
++  flex: none;
++  width: 54px;
++  height: 30px;
++  padding: 0;
++  border: 1px solid var(--line);
++  border-radius: 999px;
++  background: var(--line);
++  cursor: pointer;
++  transition: background-color 0.35s ease, border-color 0.35s ease;
++}
++.theme-switch .knob {
++  position: absolute;
++  top: 3px;
++  left: 3px;
++  width: 22px;
++  height: 22px;
++  border-radius: 50%;
++  background: #fff;
++  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
++  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
++}
++.theme-switch.on .knob { transform: translateX(24px); }
++.theme-switch .icon {
++  position: absolute;
++  inset: 0;
++  margin: auto;
++  font-size: 14px;
++  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
++}
++.theme-switch .sun { color: var(--accent); opacity: 1; transform: rotate(0deg); }
++.theme-switch .moon { color: #4b4b8f; opacity: 0; transform: rotate(-180deg); }
++.theme-switch.on .sun { opacity: 0; transform: rotate(180deg); }
++.theme-switch.on .moon { opacity: 1; transform: rotate(0deg); }
+ .topbar nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+ .topbar nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
+ .topbar nav a:hover, .topbar nav a:focus-visible { color: var(--accent); }
+@@ -75,18 +123,55 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
+   margin: 0 auto;
+   padding: 4rem 1.5rem;
+ }
+-.hero-photo {
+-  width: 300px;
+-  height: 300px;
++.hero-photo-wrap {
++  position: relative;
++  width: 330px;
+   max-width: 80vw;
+-  max-height: 80vw;
++  aspect-ratio: 1;
++}
++.hero-photo {
++  display: block;
++  width: 100%;
++  height: 100%;
+   border-radius: 50%;
+   object-fit: cover;
+-  border: 4px solid var(--accent);
+   opacity: 0;
+-  transition: opacity 0.8s ease;
+ }
+-.hero-photo.loaded { opacity: 1; }
++.hero-ring {
++  position: absolute;
++  inset: 0;
++  width: 100%;
++  height: 100%;
++  transform: rotate(-90deg);
++  pointer-events: none;
++}
++.hero-ring circle {
++  fill: none;
++  stroke: var(--accent);
++  stroke-width: 1.2;
++  stroke-dasharray: 1 1;
++  stroke-dashoffset: 1;
++}
++
++/* 1) photo pops + fades in, 2) ring draws, 3) gentle float */
++.hero-photo-wrap.loaded { animation: float 5s ease-in-out 2s infinite; }
++.hero-photo-wrap.loaded .hero-photo {
++  animation: photo-pop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
++}
++.hero-photo-wrap.loaded .hero-ring circle {
++  animation: ring-draw 1s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
++}
++@keyframes photo-pop {
++  from { opacity: 0; transform: scale(0.8); }
++  to { opacity: 1; transform: scale(1); }
++}
++@keyframes ring-draw {
++  to { stroke-dashoffset: 0; }
++}
++@keyframes float {
++  0%, 100% { transform: translateY(0); }
++  50% { transform: translateY(-8px); }
++}
+ .hero-text { flex: 1 1 340px; max-width: 520px; }
+ .hero-text p { color: var(--muted); }
+ 
+diff --git a/src/App.js b/src/App.js
+index 0b785df..c5e483f 100644
+--- a/src/App.js
++++ b/src/App.js
+@@ -1,4 +1,4 @@
+-import React, { useEffect, useState } from "react";
++import React, { useEffect, useRef, useState } from "react";
+ import {
+   VerticalTimeline,
+   VerticalTimelineElement,
+@@ -8,6 +8,7 @@ import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
+ import { GrFacebookOption } from "react-icons/gr";
+ import { TiSocialLinkedin } from "react-icons/ti";
+ import { RiGithubLine } from "react-icons/ri";
++import { FiMoon, FiSun } from "react-icons/fi";
+ import { ReactComponent as WorkIcon } from "./assets/work.svg";
+ import { ReactComponent as SchoolIcon } from "./assets/school.svg";
+ import { CONFIG } from "./constants";
+@@ -41,20 +42,69 @@ function Socials() {
+   );
+ }
+ 
++function getInitialTheme() {
++  try {
++    const saved = localStorage.getItem("theme");
++    if (saved === "light" || saved === "dark") return saved;
++  } catch (e) {}
++  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
++    ? "dark"
++    : "light";
++}
++
++function ThemeSwitch({ theme, onToggle }) {
++  const isDark = theme === "dark";
++  return (
++    <button
++      type="button"
++      role="switch"
++      aria-checked={isDark}
++      aria-label="Dark mode"
++      className={`theme-switch ${isDark ? "on" : ""}`}
++      onClick={onToggle}
++    >
++      <span className="knob">
++        <FiSun className="icon sun" />
++        <FiMoon className="icon moon" />
++      </span>
++    </button>
++  );
++}
++
+ export default function App() {
+   const [photoLoaded, setPhotoLoaded] = useState(false);
++  const [theme, setTheme] = useState(getInitialTheme);
++  const photoRef = useRef(null);
+   const { experience, skills, contact } = CONFIG;
+ 
+   useEffect(() => {
+     document.title = CONFIG.siteTitle;
+   }, []);
+ 
++  useEffect(() => {
++    // covers the case where the image was cached and loaded before React attached onLoad
++    if (photoRef.current?.complete) setPhotoLoaded(true);
++  }, []);
++
++  useEffect(() => {
++    document.documentElement.dataset.theme = theme;
++    try {
++      localStorage.setItem("theme", theme);
++    } catch (e) {}
++  }, [theme]);
++
+   return (
+     <>
+       <header className="topbar">
+-        <a className="brand" href="#home">
+-          {CONFIG.name}
+-        </a>
++        <div className="brand-wrap">
++          <a className="brand" href="#home">
++            {CONFIG.name}
++          </a>
++          <ThemeSwitch
++            theme={theme}
++            onToggle={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
++          />
++        </div>
+         <nav>
+           {CONFIG.nav.map((n) => (
+             <a key={n.id} href={`#${n.id}`}>
+@@ -66,12 +116,18 @@ export default function App() {
+ 
+       <main>
+         <section className="hero" id="home">
+-          <img
+-            className={`hero-photo ${photoLoaded ? "loaded" : ""}`}
+-            src={CONFIG.photo}
+-            alt={CONFIG.name}
+-            onLoad={() => setPhotoLoaded(true)}
+-          />
++          <div className={`hero-photo-wrap ${photoLoaded ? "loaded" : ""}`}>
++            <img
++              ref={photoRef}
++              className="hero-photo"
++              src={CONFIG.photo}
++              alt={CONFIG.name}
++              onLoad={() => setPhotoLoaded(true)}
++            />
++            <svg className="hero-ring" viewBox="0 0 100 100" aria-hidden="true">
++              <circle cx="50" cy="50" r="49.4" pathLength="1" />
++            </svg>
++          </div>
+           <div className="hero-text">
+             <h1>{CONFIG.headline}</h1>
+             <p>{CONFIG.intro}</p>

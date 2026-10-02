@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -8,6 +8,7 @@ import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { RiGithubLine } from "react-icons/ri";
+import { FiMoon, FiSun } from "react-icons/fi";
 import { ReactComponent as WorkIcon } from "./assets/work.svg";
 import { ReactComponent as SchoolIcon } from "./assets/school.svg";
 import { CONFIG } from "./constants";
@@ -41,20 +42,69 @@ function Socials() {
   );
 }
 
+function getInitialTheme() {
+  try {
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") return saved;
+  } catch (e) {}
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function ThemeSwitch({ theme, onToggle }) {
+  const isDark = theme === "dark";
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={isDark}
+      aria-label="Dark mode"
+      className={`theme-switch ${isDark ? "on" : ""}`}
+      onClick={onToggle}
+    >
+      <span className="knob">
+        <FiSun className="icon sun" />
+        <FiMoon className="icon moon" />
+      </span>
+    </button>
+  );
+}
+
 export default function App() {
   const [photoLoaded, setPhotoLoaded] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
+  const photoRef = useRef(null);
   const { experience, skills, contact } = CONFIG;
 
   useEffect(() => {
     document.title = CONFIG.siteTitle;
   }, []);
 
+  useEffect(() => {
+    // covers the case where the image was cached and loaded before React attached onLoad
+    if (photoRef.current?.complete) setPhotoLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }, [theme]);
+
   return (
     <>
       <header className="topbar">
-        <a className="brand" href="#home">
-          {CONFIG.name}
-        </a>
+        <div className="brand-wrap">
+          <a className="brand" href="#home">
+            {CONFIG.name}
+          </a>
+          <ThemeSwitch
+            theme={theme}
+            onToggle={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+          />
+        </div>
         <nav>
           {CONFIG.nav.map((n) => (
             <a key={n.id} href={`#${n.id}`}>
@@ -66,12 +116,18 @@ export default function App() {
 
       <main>
         <section className="hero" id="home">
-          <img
-            className={`hero-photo ${photoLoaded ? "loaded" : ""}`}
-            src={CONFIG.photo}
-            alt={CONFIG.name}
-            onLoad={() => setPhotoLoaded(true)}
-          />
+          <div className={`hero-photo-wrap ${photoLoaded ? "loaded" : ""}`}>
+            <img
+              ref={photoRef}
+              className="hero-photo"
+              src={CONFIG.photo}
+              alt={CONFIG.name}
+              onLoad={() => setPhotoLoaded(true)}
+            />
+            <svg className="hero-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="49.4" pathLength="1" />
+            </svg>
+          </div>
           <div className="hero-text">
             <h1>{CONFIG.headline}</h1>
             <p>{CONFIG.intro}</p>
