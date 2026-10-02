@@ -8,7 +8,7 @@ import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { GrFacebookOption } from "react-icons/gr";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { RiGithubLine } from "react-icons/ri";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiMoon, FiSun } from "react-icons/fi";
 import { ReactComponent as WorkIcon } from "./assets/work.svg";
 import { ReactComponent as SchoolIcon } from "./assets/school.svg";
 import { CONFIG } from "./constants";
@@ -86,6 +86,27 @@ function Intro({ text }) {
   );
 }
 
+const DEFAULT_FEATURED = {
+  title: "Featured posts",
+  description: "A few things I've shared on LinkedIn.",
+  posts: [
+    "https://www.linkedin.com/embed/feed/update/urn:li:share:6987843438515785728?collapsed=1",
+    "https://www.linkedin.com/embed/feed/update/urn:li:share:6877296230507122688?collapsed=1",
+    "https://www.linkedin.com/embed/feed/update/urn:li:share:6904083583326142464?collapsed=1",
+    "https://www.linkedin.com/embed/feed/update/urn:li:share:6933025818658889729",
+  ],
+};
+
+// default embed height: 560px reduced by 15%
+const EMBED_HEIGHT = 476;
+
+// accepts "urn:li:share:123", "urn:li:ugcPost:123" or a full embed URL
+function embedSrc(urn) {
+  return urn.startsWith("http")
+    ? urn
+    : `https://www.linkedin.com/embed/feed/update/${urn}`;
+}
+
 function getInitialTheme() {
   try {
     const saved = localStorage.getItem("theme");
@@ -119,7 +140,18 @@ export default function App() {
   const [photoLoaded, setPhotoLoaded] = useState(false);
   const [theme, setTheme] = useState(getInitialTheme);
   const photoRef = useRef(null);
+  const scrollerRef = useRef(null);
   const { experience, skills, contact } = CONFIG;
+  const featured = { ...DEFAULT_FEATURED, ...CONFIG.featured };
+  const hasFeatured = featured.posts.length > 0;
+  // "Featured" nav link only shows up when there are posts
+  const nav = hasFeatured
+    ? [
+        ...CONFIG.nav.filter((n) => n.id !== "contact"),
+        { id: "featured", label: "Featured" },
+        ...CONFIG.nav.filter((n) => n.id === "contact"),
+      ]
+    : CONFIG.nav;
 
   useEffect(() => {
     document.title = CONFIG.siteTitle;
@@ -129,6 +161,11 @@ export default function App() {
     // covers the case where the image was cached and loaded before React attached onLoad
     if (photoRef.current?.complete) setPhotoLoaded(true);
   }, []);
+
+  const scrollFeatured = (dir) => {
+    const el = scrollerRef.current;
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" });
+  };
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -150,7 +187,7 @@ export default function App() {
           />
         </div>
         <nav>
-          {CONFIG.nav.map((n) => (
+          {nav.map((n) => (
             <a key={n.id} href={`#${n.id}`}>
               {n.label}
             </a>
@@ -225,6 +262,52 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {hasFeatured && (
+          <section id="featured">
+            <h2>{featured.title}</h2>
+            <p className="featured-desc">{featured.description}</p>
+            {featured.posts.length > 1 && (
+              <div className="featured-arrows">
+                <button
+                  type="button"
+                  aria-label="Scroll posts left"
+                  onClick={() => scrollFeatured(-1)}
+                >
+                  <FiChevronLeft />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Scroll posts right"
+                  onClick={() => scrollFeatured(1)}
+                >
+                  <FiChevronRight />
+                </button>
+              </div>
+            )}
+            <div
+              className="featured-grid"
+              ref={scrollerRef}
+              tabIndex={0}
+              aria-label="Featured LinkedIn posts, scroll horizontally"
+            >
+              {featured.posts.map((post) => {
+                const item = typeof post === "string" ? { urn: post } : post;
+                return (
+                  <div className="embed-card" key={item.urn}>
+                    <iframe
+                      src={embedSrc(item.urn)}
+                      title={item.title || "Embedded LinkedIn post"}
+                      loading="lazy"
+                      allowFullScreen
+                      style={{ height: item.height || EMBED_HEIGHT }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <section id="contact" className="narrow">
           <h2>{contact.title}</h2>
