@@ -42,6 +42,50 @@ function Socials() {
   );
 }
 
+// How many words at the end of the intro get the typing effect
+const TYPED_WORDS = 4;
+// Typing runs from page load and ends when the ring finishes drawing (0.7s delay + 1s draw)
+const TYPING_MS = 1700;
+
+function Intro({ text }) {
+  const words = text.split(" ");
+  const head = words.slice(0, -TYPED_WORDS).join(" ") + " ";
+  const tail = words.slice(-TYPED_WORDS).join(" ");
+  const reduceMotion = window.matchMedia?.(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const [count, setCount] = useState(reduceMotion ? tail.length : 0);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const id = setInterval(() => {
+      setCount((c) => {
+        if (c >= tail.length) {
+          clearInterval(id);
+          return c;
+        }
+        return c + 1;
+      });
+    }, TYPING_MS / tail.length);
+    return () => clearInterval(id);
+  }, [tail, reduceMotion]);
+
+  const done = count >= tail.length;
+
+  return (
+    <p>
+      {head}
+      <span className="sr-only">{tail}</span>
+      <span aria-hidden="true">
+        {tail.slice(0, count)}
+        <span className={`caret ${done ? "done" : ""}`} />
+        {/* untyped part stays invisible but keeps its space, so the layout never jumps */}
+        <span className="ghost">{tail.slice(count)}</span>
+      </span>
+    </p>
+  );
+}
+
 function getInitialTheme() {
   try {
     const saved = localStorage.getItem("theme");
@@ -130,7 +174,7 @@ export default function App() {
           </div>
           <div className="hero-text">
             <h1>{CONFIG.headline}</h1>
-            <p>{CONFIG.intro}</p>
+            <Intro text={CONFIG.intro} />
             <Socials />
             <a className="btn" href={CONFIG.cv.file} download>
               {CONFIG.cv.label}
